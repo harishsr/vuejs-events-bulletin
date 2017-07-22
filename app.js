@@ -13,7 +13,7 @@ new Vue({
     },
 
     // any function(s) in the 'ready' key will run when the app loads
-    ready: function() {
+    mounted: function() {
         // initialize some basic data
         this.fetchEvents();
     },
@@ -21,7 +21,7 @@ new Vue({
     // methods we'll use in the app
     methods: {
         fetchEvents: function(){
-            var events = [
+            var new_events = [
                 {
                     id: 1,
                     name: 'Jacksonville Jumbo Shrimp Game',
@@ -39,11 +39,15 @@ new Vue({
                 }
             ];
 
-            // $set is a convenience method Vue gives us to push data to an
-            // array
-            this.$set('events', events);
+            
+            // add new_events to the events array.  
+            // I couldn't figure out $set so I improvised.
+            for (i = 0; i < new_events.length; i++){
+                this.events.push(new_events[i]);
+            }
         },
 
+        // add new events
         addEvent: function() {
             if(this.event.name) {
                 this.events.push(this.event);
