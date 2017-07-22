@@ -3,7 +3,9 @@ new Vue({
     el: '#events',
 
     // any data we will need to use on the page
-    data: {},
+    data: {
+        event: {}
+    },
 
     // any function(s) in the 'ready' key will run when the app loads
     ready: function() {},
