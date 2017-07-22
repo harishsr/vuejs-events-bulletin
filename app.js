@@ -53,6 +53,13 @@ new Vue({
                 this.events.push(this.event);
                 this.event = { name: '', description: '', date: '' }
             }
+        },
+
+        // delete events
+        deleteEvent: function(index) {
+            if(confirm("Are you sure, Gangsta?")){
+                this.events.splice(index, 1);
+            }
         }
     }
 });

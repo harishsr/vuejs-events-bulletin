@@ -53,7 +53,7 @@
             <!-- show the events -->
             <div class="col-sm-6">
                 <div class="list-group">
-                    <a href='#' class="list-group-item" v-for="event in events">
+                    <a href='#' class="list-group-item" v-for="(event, index) in events" :key="event.id">
                         <h4 class="list-group-item-heading">
                             <i class="glyphicon glyphicon-bullhorn"></i>
                             {{ event.name }}
@@ -68,7 +68,7 @@
                             {{ event.description }}
                         </p>
 
-                        <button class="btn btn-xs btn-danger" v-on:click="deleteEvent($index)">
+                        <button class="btn btn-xs btn-danger" v-on:click="deleteEvent(index)">
                             Delete
                         </button>
                     </a>
